@@ -4,6 +4,9 @@
         xmlns:asf="clr-namespace:AirspaceFixer;assembly=AirspaceFixer"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:AirspaceFixerSample"
+        xmlns:test="Aardvark.Application.WinForms"
+        xmlns:Win="clr-namespace:Aardvark.Application.WinForms;assembly=Aardvark.Application.WinForms"
+        xmlns:TK="clr-namespace:OpenTK;assembly=OpenTK.GLControl"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="MainWindow"
@@ -67,10 +70,15 @@
                     DockPanel.Dock="Right" />
         </Grid>
 
-        <asf:AirspacePanel Grid.Row="1"
+        <asf:AirspacePanel Grid.Row="1" x:Name="wahhh"
                            FixAirspace="{Binding FixAirspace}">
-            <WebBrowser x:Name="Browser"
-                        Navigating="Browser_Navigating" />
+            <!-- DOES WORK-->
+            <!--<WebBrowser x:Name="Browser"
+                        Navigating="Browser_Navigating" />-->
+            <!-- DOES NOT WORK-->
+            <Win:RenderControl x:Name="rc"></Win:RenderControl>
+            <!-- DOES NOT WORK-->
+            <!--<local:GLInh x:Name="rc" Width="640" Height="480"></local:GLInh>-->
         </asf:AirspacePanel>
 
         <Grid Grid.RowSpan="2"
